@@ -1,23 +1,23 @@
 ![](https://runelite.net/img/logo.png)
 # plugin-hub [![Discord](https://img.shields.io/discord/301497432909414422.svg)](https://discord.gg/mePCs8U)
 
-This repository contains markers for [RuneLite](https://github.com/runelite/runelite)
-plugins that are not supported by the RuneLite Developers. The plugins are
-provided "as is"; we make no guarantees about any plugin in this repo.
+Este repositorio contiene marcadores para [RuneLite](https://github.com/runelite/runelite)
+complementos que no son compatibles con los desarrolladores de RuneLite. Los complementos son
+Se proporciona "tal cual"; no ofrecemos garantías sobre ningún complemento en este repositorio.
 
 ## Setting up the development environment
 
-We recommend [IntelliJ Idea Community Edition](https://www.jetbrains.com/idea/download/) as well as Java 11. You can either have
-IntelliJ install Java (select `Eclipse Temurin`) or download it from https://adoptium.net/temurin/releases/. You must also have a GitHub account.
+Nosotros recomendamos [IntelliJ Idea Community Edition](https://www.jetbrains.com/idea/download/) Puedes tener así como Java 11.
+IntelliJ install Java (selecciona `Eclipse Temurin`) o descárgalo desde https://adoptium.net/temurin/releases/. También debes tener una cuenta de GitHub.
 
 ## Contribute to existing plugins
 
-We recommend contributing to existing plugins if the author(s) are accepting contributions, and the feature you want to add fits well into the plugin, to avoid fragmentation of plugin ecosystem. Reducing plugin fragmentation helps users discover features more easily, and helps us review changes in a more timely manner.
+Recomendamos contribuir a los complementos existentes si los autores aceptan contribuciones y la función que desea agregar se adapta bien al complemento, para evitar la fragmentación del ecosistema de complementos. Reducir la fragmentación de los complementos ayuda a los usuarios a descubrir funciones más fácilmente y nos ayuda a revisar los cambios de manera más oportuna.
 
-You may contribute to existing plugins by selecting the plugin from https://runelite.net/plugin-hub, navigating to the plugin's GitHub repository by following the "Report an issue" link, and then following the "Create new plugins" section below from step 3.
+Puede contribuir a los complementos existentes seleccionando el complemento desde https://runelite.net/plugin-hub, navegando al repositorio de GitHub del complemento siguiendo el enlace "Informar un problema" y luego siguiendo la sección "Crear nuevos complementos" a continuación desde el paso 3.
 
 ## Creating new plugins
- 1. Generate your own repository from the [plugin template](https://github.com/runelite/example-plugin/generate) link (you must be signed into GitHub first).
+ 1. Genera tu propio repositorio desde el [plugin template](https://github.com/runelite/example-plugin/generate) enlace (primero debes iniciar sesión en GitHub).
     Alternatively, you may use the `create_new_plugin.py` script provided in this repository to generate a new plugin project.
  
  2. Name your repository something appropriate, in my case I will name it `helmet-check` with the description `You should always wear a helmet.` **Make sure that your repository is set to public**.
