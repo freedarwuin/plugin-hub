@@ -18,76 +18,76 @@ Puede contribuir a los complementos existentes seleccionando el complemento desd
 
 ## Creating new plugins
  1. Genera tu propio repositorio desde el [plugin template](https://github.com/runelite/example-plugin/generate) enlace (primero debes iniciar sesión en GitHub).
-    Alternatively, you may use the `create_new_plugin.py` script provided in this repository to generate a new plugin project.
- 
- 2. Name your repository something appropriate, in my case I will name it `helmet-check` with the description `You should always wear a helmet.` **Make sure that your repository is set to public**.
+    Alternativamente, puede utilizar el script `create_new_plugin.py` provisto en este repositorio para generar un nuevo proyecto de complemento.
 
- 3. In the top right, you will see a *Clone or download*-button. Click on it and copy the link.
+2. Ponle un nombre apropiado a tu repositorio. En mi caso, lo llamaré `helmet-check` con la descripción `Siempre debes usar un casco`. **Asegúrate de que tu repositorio esté configurado como público**.
 
- 4. Open IntelliJ and choose *Get from Version Control*. Paste the link you just copied in the URL field and where you want to save it in the second field.
+3. En la parte superior derecha, verás un botón *Clonar o descargar*. Haz clic en él y copia el enlace.
 
- 5. In order to make sure everything works correctly, try to start the client with your external plugin enabled by running the provided test. If you don't have a run configuration yet for the test, attempt to run it by clicking `Run test`. This will create a run configuration and fail to run due to asserts being disabled. Add `-ea`
- to your VM options in the run configuration to enable assertions, which can be found under `Run/Debug Configurations` under `Modify options`, `Add VM options`, and then adding `-ea` into the input field which appears.
+4. Abre IntelliJ y elige *Obtener del control de versiones*. Pega el enlace que acabas de copiar en el campo URL y donde quieras guardarlo en el segundo campo.
+
+5. Para asegurarte de que todo funciona correctamente, intenta iniciar el cliente con tu complemento externo habilitado ejecutando la prueba proporcionada. Si aún no tienes una configuración de ejecución para la prueba, intenta ejecutarla haciendo clic en `Run test`. Esto creará una configuración de ejecución y no se ejecutará debido a que las afirmaciones están deshabilitadas. Agregue `-ea`
+   a las opciones de su VM en la configuración de ejecución para habilitar las aserciones, que se pueden encontrar en `Run/Debug Configurations` en `Modify options`, `Add VM options` y luego agregue `-ea` en el campo de entrada que aparece.
 
  The client should now launch with your plugin enabled. If you have a Jagex account, you will be unable to login without first following [this guide](https://github.com/runelite/runelite/wiki/Using-Jagex-Accounts).
 
  ![run-test](https://i.imgur.com/tKSQH5e.png)
 
- 6. Use the refactor tool to rename the package to what you want your plugin to be. Rightclick the package in the sidebar and choose *Refactor > Rename*. I choose to rename it to `com.helmetcheck`.
+6. Utilice la herramienta de refactorización para cambiar el nombre del paquete por el que desea que sea el complemento. Haga clic derecho en el paquete en la barra lateral y elija *Refactor > Rename*. Elegí cambiarle el nombre a `com.helmetcheck`.
 
- 7. Use the same tool, *Refactor > Rename*, to rename `ExamplePlugin`, `ExampleConfig` and `ExamplePluginTest` to `HelmetCheckPlugin` etc.
- 
- 8. Go to your plugin file and set its name in the `PluginDescriptor`, this can have spaces.
+7. Utilice la misma herramienta, *Refactor > Rename*, para cambiar el nombre de `ExamplePlugin`, `ExampleConfig` y `ExamplePluginTest` por `HelmetCheckPlugin`, etc.
 
- 9. Open the `runelite-plugin.properties` file and add info to each row. 
+8. Vaya al archivo del complemento y establezca su nombre en `PluginDescriptor`, que puede tener espacios.
+
+9. Abra el archivo `runelite-plugin.properties` y agregue información a cada fila.
  ```
- displayName=Helmet check
- author=dekvall
- description=Alerts you when you have nothing equipped in your head slot
+ displayName=Comprobación del casco
+ author=pared de la cubierta
+ description=Te avisa cuando no tienes nada equipado en la ranura de tu cabeza.
  tags=hint,gear,head
  plugins=com.helmetcheck.HelmetCheckPlugin
  ```
- `tags` will make it easier to find your plugin when searching for related words. If you want to add multiple plugin files, the `plugins` field allows for comma separated values, but this is not usually needed.
+`tags` hará que sea más fácil encontrar su complemento cuando busque palabras relacionadas. Si desea agregar varios archivos de complemento, el campo `plugins` permite valores separados por comas, pero esto no suele ser necesario.
 
- 10. Optionally, you can add an icon to be displayed alongside with your plugin. Place a file with the name `icon.png` no larger than 48x72 px at the root of the repository.
+10. Opcionalmente, puede agregar un ícono para que se muestre junto con su complemento. Coloque un archivo con el nombre `icon.png` que no sea más grande que 48x72 px en la raíz del repositorio.
 
- 11. Write a nice README so your users can see the features of your plugin.
+11. Escriba un README agradable para que sus usuarios puedan ver las características de su complemento.
 
- 12. When you have your plugin working. Commit your changes and push them to your repository. 
+12. Cuando tenga su complemento funcionando, confirme los cambios y envíelos a su repositorio.
 
 ### Licensing your repository
- 1. Go to your repository on GitHub and select *Add file* (next to the green *Code* button), and choose *Create new file* from the drop-down.
- 2. In the file name field type *LICENSE* and click the *Choose a license template* button that will appear.
- 3. Select `BSD 2-Clause "Simplified" License` from the list to the left. Fill in your details and press *Review and submit*.
- 4. Commit your changes by clicking *Commit changes* at the bottom of the page. Make sure you check the button to directly commit to the master branch.
+1. Vaya a su repositorio en GitHub y seleccione *Agregar archivo* (junto al botón verde *Código*) y elija *Crear nuevo archivo* en el menú desplegable.
+2. En el campo de nombre de archivo, escriba *LICENCIA* y haga clic en el botón *Elegir una plantilla de licencia* que aparecerá.
+3. Seleccione `Licencia BSD de 2 cláusulas "simplificada"` en la lista de la izquierda. Complete sus datos y presione *Revisar y enviar*.
+4. Confirme sus cambios haciendo clic en *Confirmar cambios* en la parte inferior de la página. Asegúrese de marcar el botón para confirmar directamente en la rama maestra.
 
 ## Submitting a plugin
- 1. Fork the [plugin-hub repository](https://github.com/runelite/plugin-hub).
- 2. Create a new branch for your plugin. 
- 3. Create a new file in the `plugin-hub/plugins` directory with the fields:
+ 1. Bifurcar el [plugin-hub repository](https://github.com/runelite/plugin-hub).
+ 2. Crea una nueva rama para tu complemento.
+ 3. Crea un nuevo archivo en el directorio `plugin-hub/plugins` con los campos:
  ```
 repository=
 commit=
  ```
- 4. To get the repository url, click the *Clone or download*-button choose *Use HTTPS*. Paste the url in in the `repository=` field.
+4. Para obtener la URL del repositorio, haz clic en el botón *Clonar o descargar* y elige *Usar HTTPS*. Pega la URL en el campo `repository=`.
 
- 5. To get the commit hash, go to your plugin repository on GitHub and click on commits. Choose the latest one and copy the full 40-character hash. It can be seen in the top right after selecting a commit. Paste this into the `commit=` field of the file. 
- Your file should now look something like this:
+5. Para obtener el hash de confirmación, ve al repositorio de tu complemento en GitHub y haz clic en confirmaciones. Elige la más reciente y copia el hash completo de 40 caracteres. Se puede ver en la parte superior derecha después de seleccionar una confirmación. Pégalo en el campo `commit=` del archivo.
+   Tu archivo ahora debería verse así:
  ```
 repository=https://github.com/dekvall/helmet-check.git
 commit=9db374fc205c5aae1f99bd5fd127266076f40ec8
  ```
- 6. This is the only change you need to make, so commit your changes and push them to your fork. Then go back to the [plugin-hub](https://github.com/runelite/plugin-hub) and click *New pull request* in the upper left. Choose *Compare across forks* and select your fork and branch as head and compare.
+6. Este es el único cambio que necesitas hacer, así que confirma tus cambios y envíalos a tu bifurcación. Luego regresa al [plugin-hub](https://github.com/runelite/plugin-hub) y haz clic en *Nueva solicitud de incorporación de cambios* en la esquina superior izquierda. Elige *Comparar entre bifurcaciones* y selecciona tu bifurcación y rama como encabezado y compara.
 
- 7. Write a short description of what your plugin does and then create your pull request.
+7. Escribe una breve descripción de lo que hace tu complemento y luego crea tu solicitud de incorporación de cambios.
 
- 8. Check the result of your PR's CI workflow, next to `.github/workflows/build.yml / build (pull_request)` will be either a ✔️ or an ❌. With a ✔️ all is good, however if it has an ❌, click `Details` to check the build log for details of the failure. Along with the build workflow there also may be an ❌ next to `RuneLite Plugin Hub Checks`, you will only need to worry about this if it says `View details for requested changes.`, in that case you should also read over those requested changes. Once you've read over the build error and requested changes, make the required changes, and push another commit to update the PR with the new `commit=` hash.  
-Don't worry about how many times it takes you to resolve build errors; we prefer all changes be kept in a single pull request to avoid spamming notifications with further newly-opened PRs.
+8. Comprueba el resultado del flujo de trabajo de integración continua de tu solicitud de incorporación de cambios. Junto a `.github/workflows/build.yml / build (pull_request)` habrá un ✔️ o un ❌. Con un ✔️ todo está bien, sin embargo, si tiene un ❌, haz clic en `Detalles` para comprobar el registro de compilación y obtener detalles de la falla. Junto con el flujo de trabajo de compilación, también puede haber un ❌ junto a `RuneLite Plugin Hub Checks`, solo deberá preocuparse por esto si dice `View details for request changes.`, en ese caso, también debe leer los cambios solicitados. Una vez que haya leído el error de compilación y los cambios solicitados, realice los cambios necesarios y envíe otra confirmación para actualizar la solicitud de incorporación de cambios con el nuevo hash `commit=`.
+   No se preocupe por la cantidad de veces que le toma resolver los errores de compilación; preferimos que todos los cambios se mantengan en una sola solicitud de incorporación de cambios para evitar enviar notificaciones con más solicitudes de incorporación de cambios recién abiertas.
 
- 9. Be patient and wait for your plugin to be reviewed and merged.
+9. Sea paciente y espere a que se revise y fusione su complemento.
 
-## Updating a plugin
-To update a plugin, simply update the manifest with the most recent commit hash. 
+## Actualización de un complemento
+Para actualizar un complemento, simplemente actualice el manifiesto con el hash de confirmación más reciente.
 
 ## Reviewing
 We will review your plugin to ensure it isn't malicious, doesn't [break Jagex's rules](https://secure.runescape.com/m=news/third-party-client-guidelines?oldschool=1), 
